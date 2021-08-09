@@ -7,19 +7,17 @@ public class Aviao {
 	private String modelo;
 	private String companhia;
 	private String cor;
+	private String tipo;
 	private int assentos;
 	
-	
 	//métodos
-	public void decola()
+	public String checar(int ocupados)
 	{
-		System.out.println("\nO avião está decolando. Boa viagem!\n");
-	}
+		if(ocupados >= this.assentos)
+		return "ASSENTOS OCUPADOS";	
 	
-	
-	public void pousa()
-	{
-		System.out.println("\nO avião está pousando na pista.");
+		else
+		return (this.assentos - ocupados) + " assentos restantes";
 	}
 	
 	
@@ -54,12 +52,27 @@ public class Aviao {
 	public void setCor(String cor) {
 		this.cor = cor;
 	}
-	public int getNumAssento() {
+	public String getTipo() {
+		return tipo;
+	}
+
+
+	public int getAssentos() {
 		return assentos;
 	}
-	public void setNumAssento(int asnt) {
-		this.assentos = asnt;
+
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
+
+
+	public void setAssentos(int assentos) {
+		this.assentos = assentos;
+	}
+		
+	
+	
 
 	
 	//status
@@ -70,6 +83,7 @@ public class Aviao {
 		System.out.println("Nome da companhia aerea: "+this.companhia);
 		System.out.println("Cor do avião: "+this.cor);
 		System.out.println("Número de assentos: "+this.assentos);
+		
 	}
 
 
